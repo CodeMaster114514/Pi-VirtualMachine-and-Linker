@@ -1,0 +1,1 @@
+const char *NotAnyArgs = "You don't have to give our running file!\n";
