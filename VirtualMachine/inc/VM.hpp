@@ -2,12 +2,16 @@
 #define INTERPRETER_HPP
 
 #include <iostream>
-#include <stdio.h>
-#include <locale.h>
-#include <libintl.h>
-#include <stdlib.h>
 
-#include "BasicType.h"
+extern "C"
+{
+	#include <stdio.h>
+	#include <locale.h>
+	#include <libintl.h>
+	#include <stdlib.h>
+	#include "BasicType.h"
+}
+
 #include "heap.hpp"
 #include "runtime.hpp"
 #include "stack.hpp"
@@ -33,6 +37,7 @@ public:
 	VM(UINT64 MaxHeapSize);
 	~VM();
 	VM_return_value ready_running_file(const char *file);
+	int run();
 };
 
 #endif

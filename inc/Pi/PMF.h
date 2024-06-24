@@ -17,6 +17,12 @@ enum
 	PI_SEHMENT_NOTE
 };
 
+enum
+{
+	Pi_SEGMENT_FLAG_EXECUTABLE = 0b00000001,
+	Pi_SEGMENT_FLAG_READONLY = 0b00000010
+};
+
 typedef struct
 {
 	char magic_number[3];
@@ -56,7 +62,7 @@ typedef struct
 typedef struct
 {
 	UINT64 symbol_count;
-	UINT64 symbols_enter;
+	Pi_symbol symbols_enter[];
 } Pi_symbol_header;
 
 // about PMF.c
